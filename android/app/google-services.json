@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "549889512109",
+    "project_id": "flutter-video-audio-chat-ce32a",
+    "storage_bucket": "flutter-video-audio-chat-ce32a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549889512109:android:0479170dd858c0b1a82c24",
+        "android_client_info": {
+          "package_name": "com.example.chatty"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEv_fnuuf_YY8MgUKtnYm2HukrbNANuCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
