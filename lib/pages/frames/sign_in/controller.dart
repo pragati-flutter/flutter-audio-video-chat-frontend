@@ -41,27 +41,35 @@ class SignInController extends GetxController {
             // idToken: user.id,
             accessToken: gAuthentication.accessToken,
           );
-          User? firebaseUser;
 
-          try{
-            UserCredential userCredential =
-            await FirebaseAuth.instance.signInWithCredential(credential);
 
-            // Get the authenticated user
-            firebaseUser =  userCredential.user;
+          try {
+            print("Attempting sign-in...");
 
-            print("Firebase UID: ${firebaseUser!.uid}");
-            print("Firebase Name: ${firebaseUser.displayName}");
-            print("Firebase Email: ${firebaseUser.email}");
-            print("Firebase Photo URL: ${firebaseUser.photoURL}");
-          }catch(e){
-            debugPrint(e.toString());
+            UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+
+            User? firebaseUser = userCredential.user;
+
+
+            if (firebaseUser != null) {
+              print("✅ Firebase UID: ${firebaseUser.uid}");
+              print("✅ Firebase Name: ${firebaseUser.displayName ?? 'No name'}");
+              print("✅ Firebase Email: ${firebaseUser.email ?? 'No email'}");
+              print("✅ Firebase Photo URL: ${firebaseUser.photoURL ?? 'No photo'}");
+            } else {
+              print("⚠️ Sign-in succeeded but user is null.");
+            }
+
+          } catch (e, stackTrace) {
+
+            print(stackTrace.toString());
           }
+
 
           String? displayName = user.displayName ?? "unknown";
           String email = user.email;
           String id = user.id;
-          String photoUrl = firebaseUser?.photoURL ?? "assets/icons/google.png";
+          String photoUrl =user.photoUrl ?? "https://demo.cogentlab.com/erpm/Images/INT102021296408_ProfilePic.png";
 
           LoginRequestEntity loginPanelListRequestEntity = LoginRequestEntity();
           loginPanelListRequestEntity.avatar = photoUrl;

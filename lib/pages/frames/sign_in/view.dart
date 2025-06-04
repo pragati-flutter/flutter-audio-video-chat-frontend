@@ -43,7 +43,8 @@ class SignInPage extends GetView<SignInController> {
       ]
         ),
 
-        child: Row(
+        child:
+        Row(
           mainAxisAlignment: logo == ''?MainAxisAlignment.center : MainAxisAlignment.start,
           children: [
            logo== ''?Container(): Container(

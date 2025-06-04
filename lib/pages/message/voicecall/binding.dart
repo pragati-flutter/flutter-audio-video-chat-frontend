@@ -1,12 +1,10 @@
-import 'package:chatty/pages/message/voicecall/controller.dart';
 import 'package:get/get.dart';
+import 'controller.dart';
 
-class VoiceCallBinding extends Bindings{
+class VoiceCallViewBinding implements Bindings {
 
-
-
-  @override
-  void dependencies() {
-    Get.lazyPut<VoiceCallController>(()=>VoiceCallController());
-  }
+@override
+void dependencies() {
+  Get.lazyPut<VoiceCallViewController>(() => VoiceCallViewController());
+}
 }

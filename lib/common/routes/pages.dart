@@ -6,6 +6,8 @@ import 'package:chatty/pages/message/chat/binding.dart';
 import 'package:chatty/pages/message/chat/view.dart';
 
 import 'package:chatty/pages/message/index.dart';
+import 'package:chatty/pages/message/videocall/binding.dart';
+import 'package:chatty/pages/message/videocall/view.dart';
 import 'package:chatty/pages/message/voicecall/binding.dart';
 import 'package:chatty/pages/message/voicecall/view.dart';
 
@@ -57,11 +59,14 @@ class AppPages {
     GetPage(name: AppRoutes.SendCode, page: () => SendCodePage(), binding: SendCodeBinding()),
     // 首页 */
     //contact page
-    GetPage(name: AppRoutes.Contact, page: () => ContactPage(), binding: ContactBinding()),
+    GetPage(
+        name: AppRoutes.Contact,
+        page: () => ContactPage(),
+        binding: ContactBinding()),
     //message page
     GetPage(
       name: AppRoutes.Message,
-      page: () => const MessagePage(),
+      page: () =>  MessagePage(),
       binding: MessageBinding(),
       middlewares: [
         RouteAuthMiddleware(priority: 1),
@@ -71,16 +76,24 @@ class AppPages {
     //Profile section
     GetPage(
         name: AppRoutes.Profile,
-        page: () => const ProfilePage(),
+        page: () => ProfilePage(),
         binding: ProfileBinding()),
 
     //聊天详情
-    GetPage(name: AppRoutes.Chat, page: () => const ChatPage(), binding: ChatBinding()),
+    GetPage(
+        name: AppRoutes.Chat,
+        page: () =>  ChatPage(),
+        binding: ChatBinding()),
 /*
     GetPage(name: AppRoutes.Photoimgview, page: () => PhotoImgViewPage(), binding: PhotoImgViewBinding()),
-
     */
-    GetPage(name: AppRoutes.VoiceCall, page: () => VoiceCallPage(), binding: VoiceCallBinding()),
-    /*GetPage(name: AppRoutes.VideoCall, page: () => VideoCallPage(), binding: VideoCallBinding()),*/
+    GetPage(
+        name: AppRoutes.VoiceCall,
+        page: () => VoiceCallViewPage(),
+        binding: VoiceCallViewBinding()),
+    GetPage(
+        name: AppRoutes.VideoCall,
+        page: () => VideoCallPage(),
+        binding: VideoCallBinding()),
   ];
 }

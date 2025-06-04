@@ -1,5 +1,6 @@
 library profile;
+
 export './state.dart';
 export './controller.dart';
-export './binding.dart';
+export './bindings.dart';
 export './view.dart';

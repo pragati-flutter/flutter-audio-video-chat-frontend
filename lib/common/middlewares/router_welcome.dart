@@ -4,6 +4,8 @@ import 'package:chatty/common/store/store.dart';
 
 import 'package:get/get.dart';
 
+import '../store/config.dart';
+
 /// 第一次欢迎页面
 class RouteWelcomeMiddleware extends GetMiddleware {
   // priority 数字小优先级高
@@ -18,9 +20,9 @@ class RouteWelcomeMiddleware extends GetMiddleware {
     if (ConfigStore.to.isFirstOpen == false) {
       return null;
     } else if (UserStore.to.isLogin == true) {
-      return RouteSettings(name: AppRoutes.Message);
+      return const RouteSettings(name: AppRoutes.Message);
     } else {
-      return RouteSettings(name: AppRoutes.SIGN_IN);
+      return const RouteSettings(name: AppRoutes.SIGN_IN);
     }
   }
 }

@@ -1,6 +1,8 @@
-import 'package:chatty/common/entities/contact.dart';
+import 'package:chatty/common/entities/entities.dart';
 import 'package:get/get.dart';
 
-class ContactState{
-RxList<ContactItem> contactList = <ContactItem>[].obs;
+class ContactState {
+
+  var count = 0.obs;
+ RxList<ContactItem> contactList = <ContactItem>[].obs;
 }

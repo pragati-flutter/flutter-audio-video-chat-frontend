@@ -1,6 +1,12 @@
-import 'package:chatty/common/entities/user.dart';
+import 'package:chatty/common/entities/entities.dart';
 import 'package:get/get.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class MessageState{
-var head_detail = UserItem().obs;
+class MessageState {
+  RxList<Message> msgList = <Message>[].obs;
+  RxList<CallMessage> callList = <CallMessage>[].obs;
+  RxBool tabStatus = true.obs;
+  var head_detail = UserItem().obs;
+
+
 }

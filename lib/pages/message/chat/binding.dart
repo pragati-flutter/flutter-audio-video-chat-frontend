@@ -1,9 +1,10 @@
 import 'package:get/get.dart';
-import 'package:chatty/pages/message/chat/index.dart';
 
-class ChatBinding implements Bindings {
+import 'controller.dart';
+
+class ChatBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<ChatController>(() => ChatController());
+    Get.lazyPut(() => ChatController());
   }
 }
